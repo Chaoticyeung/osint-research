@@ -46,7 +46,7 @@ Handbook** 讲照片/视频溯源验证。GitHub 索引:jivoi/awesome-osint、ed
 - **Google Earth(含历史影像)/ Google Maps 街景** — 比对建筑、地形、路牌;历史影像能匹配
   拍摄年份的地貌。⚠️ 街景不覆盖中国大陆,国内定位靠卫星图 + 本土地图(高德/百度)+ 实景。
 - **卫星影像**:Sentinel Hub / Copernicus(免费、可查历史)、Microsoft Planetary Computer(Sentinel-2
-  约 10 米分辨率、约 5 天一景、免注册可浏览)、Google Earth,用于把地点收敛到坐标、
+  约 10 米分辨率、约 5 天一景,Explorer 网页免注册可浏览)、Google Earth,用于把地点收敛到坐标、
   核对拍摄时点的地面状态(施工/植被/积雪)。
 - **Overpass Turbo (OpenStreetMap)** — 按地物特征(加油站、塔、桥)搜候选地点。
 
@@ -61,23 +61,30 @@ Handbook** 讲照片/视频溯源验证。GitHub 索引:jivoi/awesome-osint、ed
 
 原则:声称"某时某地发生了 X",就去找当时当地会被机器自动记录、且与当事人无关的公开数据。
 这类记录不受叙事影响,是最硬的时空一致性检验。优先选**有历史存档**的源,只显示"现在"的
-实时看板(如 ShadowBroker 这类聚合平台)对回头查已发生的事帮助不大。
+实时看板(如 ShadowBroker 这类聚合平台)对回头查已发生的事帮助不大。各源的访问门槛分三档:
+**免注册**(网页直接查)/ **免费注册**(留邮箱拿 key,几分钟)/ **需申请**(说明用途、等审批)。
+没登录态时先用免注册档,别在第一层就卡住。
 
 - **NOTAM(航行通告)历史** — 事发当晚空域有无临时限制,可指向计划中的军事/航空活动。
 - **METAR / 历史气象** (如 ogimet、wunderground history) — 当时天气,可解释"发光体"
   是否为寻常光学现象。
-- **航班动态存档** — Flightradar24、FlightAware 的历史数据(付费档更全);免费补充:
-  adsb.lol(含军机 ADS-B,ODbL 开放数据)、OpenSky Network(研究用途可申请历史 API)。
+- **航班动态存档** — Flightradar24、FlightAware:免注册只能看近几天,历史回放要付费订阅。
+  免费补充:adsb.lol(免注册,含军机 ADS-B,ODbL 开放数据,历史归档见其 GitHub 数据发布)、
+  OpenSky Network(实时接口匿名可用但限流;历史数据库**需申请**,面向研究用途)。
   ⚠️ ADS-B 靠志愿接收站,中国大陆境内覆盖稀疏,查不到不等于没飞。
-- **船舶 AIS** — MarineTraffic 历史(付费档更全);免费补充 aisstream.io(实时流)。
-  涉渔船、走私、非法捕捞用 **Global Fishing Watch**(渔船活动事件,有历史,CC BY)。
-- **火情 / 爆炸** — NASA FIRMS 火点热异常存档(VIIRS/MODIS),核实"某地某晚起火/爆炸"是否
+- **船舶 AIS** — MarineTraffic:免注册看实时,历史航迹付费。aisstream.io 免费注册拿 key,
+  但只有实时流、没有历史,回头查用不上。涉渔船、走私、非法捕捞用 **Global Fishing Watch**
+  (渔船活动事件,有历史,CC BY;网页地图免注册可看,API 免费注册拿 token)。
+- **火情 / 爆炸** — NASA FIRMS 火点热异常存档(VIIRS/MODIS;网页地图免注册,批量下载
+  历史用邮箱免费申请 MAP_KEY),核实"某地某晚起火/爆炸"是否
   有卫星热信号;⚠️ 小火、室内火、云层遮挡可能漏检,漏检不算反证。
-- **地震 / 火山** — USGS 地震目录、Smithsonian 全球火山计划,核实自然灾害类传闻的时间地点。
-- **断网** — IODA(佐治亚理工互联网断网监测,基于 BGP 与主动探测,有历史),核实"某地断网/
+- **地震 / 火山** — USGS 地震目录、Smithsonian 全球火山计划,均免注册,核实自然灾害类传闻的
+  时间地点。
+- **断网** — IODA(佐治亚理工互联网断网监测,基于 BGP 与主动探测,有历史,免注册),核实"某地断网/
   封网"说法及其起止时间。
-- **地表变化** — Sentinel-1 SAR(Alaska Satellite Facility 免费目录)、NASA OPERA / Copernicus
-  EGMS 地表形变与洪水淹没产品,穿云穿夜,可核实洪水范围、爆炸坑、大面积拆建。
+- **地表变化** — Sentinel-1 SAR(Alaska Satellite Facility 检索免注册,下载要免费的 NASA Earthdata
+  账号)、NASA OPERA(同用 Earthdata 账号)/ Copernicus EGMS(免费注册)地表形变与洪水淹没产品,
+  穿云穿夜,可核实洪水范围、爆炸坑、大面积拆建。门槛最高、解读也最专业,只在其他旁证都没有时上。
 
 ## 跨境主体尽调(中国境内主体以 china-sources.md 为准,这里是境外/跨境补充)
 
